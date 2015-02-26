@@ -1,0 +1,94 @@
+1 # PostgreSQL. Versions 8.2 and up are supported. 
+2 # 
+3 # Install the pg driver: 
+4 #   gem install pg 
+5 # On OS X with Homebrew: 
+6 #   gem install pg -- --with-pg-config=/usr/local/bin/pg_config 
+7 # On OS X with MacPorts: 
+8 #   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config 
+9 # On Windows: 
+10 #   gem install pg 
+11 #       Choose the win32 build. 
+12 #       Install PostgreSQL and put its /bin directory on your path. 
+13 # 
+14 # Configure Using Gemfile 
+15 # gem 'pg' 
+16 # 
+17 default: &default 
+18   adapter: postgresql 
+19   encoding: unicode 
+20   # For details on connection pooling, see rails configuration guide 
+21   # http://guides.rubyonrails.org/configuring.html#database-pooling 
+22   pool: 5 
+23 
+ 
+24 development: 
+25   <<: *default 
+26   database: nopostgre_development 
+27 
+ 
+28   # The specified database role being used to connect to postgres. 
+29   # To create additional roles in postgres see `$ createuser --help`. 
+30   # When left blank, postgres will use the default role. This is 
+31   # the same name as the operating system user that initialized the database. 
+32   #username: nopostgre 
+33 
+ 
+34   # The password associated with the postgres role (username). 
+35   #password: 
+36 
+ 
+37   # Connect on a TCP socket. Omitted by default since the client uses a 
+38   # domain socket that doesn't need configuration. Windows does not have 
+39   # domain sockets, so uncomment these lines. 
+40   #host: localhost 
+41 
+ 
+42   # The TCP port the server listens on. Defaults to 5432. 
+43   # If your server runs on a different port number, change accordingly. 
+44   #port: 5432 
+45 
+ 
+46   # Schema search path. The server defaults to $user,public 
+47   #schema_search_path: myapp,sharedapp,public 
+48 
+ 
+49   # Minimum log levels, in increasing order: 
+50   #   debug5, debug4, debug3, debug2, debug1, 
+51   #   log, notice, warning, error, fatal, and panic 
+52   # Defaults to warning. 
+53   #min_messages: notice 
+54 
+ 
+55 # Warning: The database defined as "test" will be erased and 
+56 # re-generated from your development database when you run "rake". 
+57 # Do not set this db to the same as development or production. 
+58 test: 
+59   <<: *default 
+60   database: nopostgre_test 
+61 
+ 
+62 # As with config/secrets.yml, you never want to store sensitive information, 
+63 # like your database password, in your source code. If your source code is 
+64 # ever seen by anyone, they now have access to your database. 
+65 # 
+66 # Instead, provide the password as a unix environment variable when you boot 
+67 # the app. Read http://guides.rubyonrails.org/configuring.html#configuring-a-database 
+68 # for a full rundown on how to provide these environment variables in a 
+69 # production deployment. 
+70 # 
+71 # On Heroku and other platform providers, you may have a full connection URL 
+72 # available as an environment variable. For example: 
+73 # 
+74 #   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase" 
+75 # 
+76 # You can use this database configuration with: 
+77 # 
+78 #   production: 
+79 #     url: <%= ENV['DATABASE_URL'] %> 
+80 # 
+81 production: 
+82   <<: *default 
+83   database: nopostgre_production 
+84   username: nopostgre 
+85   password: <%= ENV['NOPOSTGRE_DATABASE_PASSWORD'] %> 
