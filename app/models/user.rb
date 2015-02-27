@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+ before_save { self.email = self.email.downcase }
  validates :name, presence: true, length: {maximum: 50}
- validates :email, presence: true
+ VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
+ validates :email, presence: true, format: { :with VALID_EMAIL }, uniqueness: {case_sensitive: false}
+ has_secure_password
+ validates :password, presence: true, length: {minimum: 8}, length: {maximim: 16}
 end
