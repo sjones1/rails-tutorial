@@ -13,6 +13,10 @@ textarea {
   resize: vertical;
 }
 
+.indentedtext {
+  margin-left:40px;
+}
+
 .center {
   text-align: centre;
 }
@@ -20,21 +24,6 @@ textarea {
 .center {
   margin-bottom: 10px;
 }
-
-/* header fix size */
-
-.navbar {
-  height: 8%;
-}
-
-.navbar-inverse {
-  height: 8%;
-}
-
-.navbar-fixed_top {
-  height: 8%;
-}
-
 
 /* text styles */
 
@@ -45,7 +34,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
   text-align: centre;
   color: #777
 }
@@ -54,7 +42,7 @@ h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
   font-weight: normal;
   color: #777;
 }
@@ -101,11 +89,44 @@ small {
 }
 
 ul {
-    float: right;
-    list-style: none;
+  float:right;
+  list-style: none;
 }
 
 li {
-      float: left;
-      margin-left: 15px;
+  float:left;
+  margin-left:15px;
 }
+/* navbar change */
+
+.navbar {
+  background-color: #468d61;
+  border-color: #ffffff;
+  height: 51px;
+}
+
+.navbar-inverse {
+  height: 51px;
+}
+
+.navbar-fixed_top {
+  height: 51px;
+}
+
+.btn-default {
+  background-color: #468d61;
+  border-color: #fff;
+}
+
+.btn-default:hover {
+  background-color: #fff;
+}
+
+#logo2 {
+  color: #fff;
+}
+
+#logo2:hover {
+  color: #000;
+}
+

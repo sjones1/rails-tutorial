@@ -11,18 +11,18 @@
 <body>
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Home", home_path, id: "logo" %>
-    <nav>
+    <%= link_to "Home", home_path, id: "logo" %> 
+    <%= link_to image_tag("navlogo.png", alt: "Home"), home_path %>
+
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",  home_path %></li>
-        <li><%= link_to "About",  about_path %></li>
-        <li><%= link_to "Log in", '#' %></li>
+        <li class="btn-default"><%= link_to "Home",  home_path, id:'logo2' %></li>
+        <li class="btn-default"><%= link_to "About",  about_path, id:'logo2' %></li>
+        <li class="btn-default"><%= link_to "Log in", '#', id:'logo2' %></li>
       </ul>
-    </nav>
+
   </div>
 </header>
-  <div class="container">
-    <%= link_to image_tag("startyourlogo.png", size:"138x100", alt: "Home"), home_path %>
+  <div class="container jumbotron">
     <%= yield %>
     <%= render 'layouts/footer' %>
   </div>
