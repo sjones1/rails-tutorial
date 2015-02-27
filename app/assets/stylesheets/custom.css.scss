@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 body {
-  padding-top: 60px;
+  padding-top: 90px;
 }
 
 section {
@@ -20,6 +20,21 @@ textarea {
 .center {
   margin-bottom: 10px;
 }
+
+/* header fix size */
+
+.navbar {
+  height: 8%;
+}
+
+.navbar-inverse {
+  height: 8%;
+}
+
+.navbar-fixed_top {
+  height: 8%;
+}
+
 
 /* text styles */
 
@@ -73,23 +88,24 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
-  a {
+}
+a {
     color: #777;
-    &:hover {
+}
+a:hover {
       color: #555;
-    } 
-  }
-  small {
-  float: left;
-  }
+} 
 
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
+small {
+  float: left;
 }
 
+ul {
+    float: right;
+    list-style: none;
+}
+
+li {
+      float: left;
+      margin-left: 15px;
+}
