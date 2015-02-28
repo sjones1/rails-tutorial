@@ -1,6 +1,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
 body {
   padding-top: 90px;
 }
@@ -13,6 +27,10 @@ textarea {
   resize: vertical;
 }
 
+.indentedtext {
+  margin-left:40px;
+}
+
 .center {
   text-align: centre;
 }
@@ -20,7 +38,6 @@ textarea {
 .center {
   margin-bottom: 10px;
 }
-
 
 /* text styles */
 
@@ -31,7 +48,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
   text-align: centre;
   color: #777
 }
@@ -40,7 +56,7 @@ h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
   font-weight: normal;
   color: #777;
 }
@@ -87,24 +103,47 @@ small {
 }
 
 ul {
-    float: right;
-    list-style: none;
+  float:right;
+  list-style: none;
 }
 
 li {
-      float: left;
-      margin-left: 15px;
+  float:left;
+  margin-left:15px;
 }
-
 /* navbar change */
 
 .navbar {
   background-color: #468d61;
   border-color: #ffffff;
-  height: 42px;
+  height: 51px;
 }
 
-.navbar:hover {
-  background-color: #100000;
+.navbar-inverse {
+  height: 51px;
 }
+
+.navbar-fixed_top {
+  height: 51px;
+}
+
+.btn-default {
+  background-color: #468d61;
+  border-color: #fff;
+}
+
+.btn-default:hover {
+  background-color: #fff;
+}
+
+#logo2 {
+  color: #fff;
+}
+
+#logo2:hover {
+  color: #000;
+}
+
+/* sidebar */
+
 
