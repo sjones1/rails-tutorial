@@ -1,0 +1,24 @@
+<% provide(:title, "Login") %>
+<h2> Log in now to enjoy member only features </h2>
+
+  <div>
+   <table>
+    <%= form_for(:session, url: login_path) do |u| %>
+   <td align="right"> <%= u.label :email, "e-mail:" %>
+   <td width="5px">
+   <td> <%= u.email_field :email %>
+   <tr>
+   <td align="right"> <%= u.label :password, "Password:" %>
+   <td width="5px">
+   <td> <%= u.password_field :password %>
+   <tr height="5px">
+   <td>
+   <tr>
+   <td>
+   <td>
+   <td> <%= u.submit "Log In", class: "btn btn-primary" %>
+   <% end %>
+   <tr>
+   <td><p> New User? No problem, just <%= link_to "sign up now.", signup_path %> </p>
+   </table>
+  </div>
