@@ -179,4 +179,16 @@ aside {
 
 .gravatar_edit {
   margin-top: 15px;
+
+#error_explanation {
+  color: red;
+  ul {color:red;
+  }
 }
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}}
