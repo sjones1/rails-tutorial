@@ -13,8 +13,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: appname-prod
-  pool: 5
-  host: localhost
-  username: action
-  password:
+  pool:5
+  database: fierce-bayou-9638_production
+  username: fierce-bayou-9638_production
+  password: <%= ENV['fierce-bayou-9638_DATABASE_PASSWORD'] %>
