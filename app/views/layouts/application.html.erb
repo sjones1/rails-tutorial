@@ -17,9 +17,23 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="btn-default"><%= link_to "Home",  home_path, id:'logo2' %></li>
         <li class="btn-default"><%= link_to "About",  about_path, id:'logo2' %></li>
+      <% if logged_in? %>
+        <li><%= link_to "Users", '#', id:'logo2' %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" id="logo2" data-toggle="dropdown">
+            Account <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="btn-default"><%= link_to "Profile", current_user %></li>
+            <li class="btn-default"><%= link_to "Settings", '#' %></li>
+            <li class="divider"></li>
+            <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+          </ul>
+         </li>
+      <% else %>
         <li class="btn-default"><%= link_to "Log in", login_path, id:'logo2' %></li>
+      <% end %>
       </ul>
-
   </div>
 </header>
   <div class="container jumbotron">
