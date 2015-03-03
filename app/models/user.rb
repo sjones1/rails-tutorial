@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
  validates :password, presence: true, length: {minimum: 8, maximum: 16}
 
 # Returns the hash digest of the string
+
   def User.digest(string)
    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
    BCrypt::Password.create(string, cost: cost)
@@ -26,6 +27,7 @@ class User < ActiveRecord::Base
   end
 
   def authenticated?(remember_token)
+    return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
  

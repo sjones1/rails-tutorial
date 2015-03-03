@@ -14,6 +14,11 @@
    <tr height="5px">
    <td>
    <tr>
+   <td align="right"> <%= u.label :remember_me, class: "checkbox inline" do %>
+   <td> <%= u.check_box :remember_me %> 
+   <td> <span> Remember me </span>
+      <% end %>
+   <tr>
    <td>
    <td>
    <td> <%= u.submit "Log In", class: "btn btn-primary" %>
